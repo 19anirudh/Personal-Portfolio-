@@ -1,0 +1,176 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/1cd2b67785.js" crossorigin="anonymous"></script>
+ </head>
+ <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1 class="color">Hi,I'm <span>Anirudh kathare</span></h1>
+                <p>Full Stack Web Developer</p>
+            </div>
+        </div>
+    </div>
+    <!--About-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/IMG_9858A.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me,</h1>
+                    <p class="About-me">My name is Anirudh, I am 23 years old, I am live in Karnataka.
+                         I was completed degree in B.sc (CBZ)
+                        in Rani Chanamma University Belagavi. 
+                        And i was completed full stack web development 
+                        in Skilledge Instuite at Pune.  
+                        My aim is to become a web developer and graphic designer.</p>
+
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designing web/app interfaces</li>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>Graphic Designing</span><br>Designing logo's interfaces</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>B.sc-2022</span><br>RANI CHANAMMA UNIVERSITY BELAGAVI</li>
+                                <li><span>P.U.C-2018</span><br>  JA PU COLLEGE ATHANI, BELAGAVI</li>
+                                <li><span>S.S.L.C-2015</span><br>AVVS SCHOOL ATHANI, BELAGAVI</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Servises -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Development</h2>
+                    <p>Web development is the building and maintenance of websites it’s 
+                        the work that happens behind the scenes to make a website look great. 
+                        work fast and perform well with a seamless user experience.</p>
+                        <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>  
+                    <h2>UI/UX</h2>
+                    <p>gathers and evaluates user requirements in collaboration with
+                        Product Managers. They use their skills to illustrate design
+                         ideas using storyboards,process flows, or sitemaps. </p>
+                        <a href="#">learn more</a>
+                </div>
+                </div>
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- ----------Contact------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-regular fa-paper-plane"></i>anirudhkathare19@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>9035130298</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <input type="text" name="number" placeholder="Mobile.no" required>
+                       
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                        
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>copyright © Anirudh </p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+<script>
+    var menu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        menu.style.right = "0";
+    }
+
+    function closemenu(){
+        menu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwovRUK9p1bNFMTJb6lA1dLvkwnWCzBb6MQ9jeaehH9QKbgwcgBHLOdrWLV9DiT9OHr/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+ </body>
+ </html>
